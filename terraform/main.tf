@@ -5,7 +5,12 @@ required_providers {
     version = "5.80.0"
   }
 }
-
+  # Configure the backend to store the Terraform state file in an S3 bucket
+    backend "s3" {
+      bucket = "terraform-state-christopher-vazquez"
+      key = "terraform.tfstate"
+      region = "us-east-1"
+    }
 }
 
 provider "aws" {
